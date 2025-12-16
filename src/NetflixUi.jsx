@@ -3,6 +3,8 @@ import Navbar from './Navbar';
 import MainContent from './MainContent';
 import VideoPlayer from './VideoPlayer';
 import EndingSelection from './EndingSelection';
+import MoreInfoModal from './MoreInfoModal';
+import CastModal from './CastModal'; 
 import { AnimatePresence } from 'framer-motion';
 
 const FILM_DATA = {
@@ -16,7 +18,7 @@ const FILM_DATA = {
       label: "Ending 1",
     },
     B: {
-      id: 'eUolLUnN0co',
+      id: 'FYoeYOCrtpg',
       label: "Ending 2",
     }
   }
@@ -27,6 +29,10 @@ const NetflixUi = () => {
   const [showChoices, setShowChoices] = useState(false);
   const [hasEnded, setHasEnded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  
+  // Modals state
+  const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
+  const [isCastModalOpen, setIsCastModalOpen] = useState(false); 
 
   const handlePlay = () => {
     setIsPlaying(true);
@@ -60,7 +66,30 @@ const NetflixUi = () => {
   return (
     <div className="bg-black min-h-screen text-white font-sans">
       <Navbar />
-      <MainContent onPlay={handlePlay} />
+      
+      <MainContent 
+        onPlay={handlePlay} 
+        onMoreInfo={() => setIsInfoModalOpen(true)} 
+        onCast={() => setIsCastModalOpen(true)} 
+      />
+
+      <AnimatePresence>
+        {isInfoModalOpen && (
+          <MoreInfoModal 
+            isOpen={isInfoModalOpen} 
+            onClose={() => setIsInfoModalOpen(false)} 
+            onPlay={handlePlay} 
+          />
+        )}
+        
+        {/* Render Cast Modal */}
+        {isCastModalOpen && (
+          <CastModal 
+            isOpen={isCastModalOpen} 
+            onClose={() => setIsCastModalOpen(false)} 
+          />
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {isPlaying && !showChoices && !hasEnded && (
