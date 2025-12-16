@@ -18,9 +18,11 @@ const CAST_DATA = {
   crew: [
     { role: "Director", name: "Charlie Villacoba" },
     { role: "Co-Director", name: "Iverene Grace Causapin" },
-    { role: "Editors", name: "Charlie Villacoba, Nicoll Mitch Maningat, John Rey Bagunas" },
-    { role: "Videographers", name: "Charlie Villacoba, John Rey Bagunas" },
     { role: "Scriptwriter", name: "Cielo Tadas" },
+    { role: "Videographers", name: "Charlie Villacoba, John Rey Bagunas" },
+    { role: "Editor", name: "Charlie Villacobaa" },
+    { role: "Animator", name: "Nicoll Mitch Maningat" },
+    { role: "Graphic Designer", name: "John Rey Bagunas" },
     { role: "Developers", name: "Iverene Grace Causapin, John Rey Bagunas" },
   ]
 };
@@ -29,7 +31,7 @@ const CastModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[70] flex justify-center items-center bg-black/80 p-4 backdrop-blur-sm">
+    <div className="fixed inset-0 z-[70] flex justify-center items-center bg-black/80 p-4">
       <style>{`
         .no-scrollbar::-webkit-scrollbar {
           display: none;

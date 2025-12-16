@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const DESCRIPTIONS = {
-  A: "Vote to sacrifice the weakest link. Survival requires a blood price.",
+  A: "Vote to sacrifice someone. Survival requires a blood price.",
   B: "Confess the sins of the past. Total accountability is the only way out."
 };
 

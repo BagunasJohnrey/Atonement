@@ -8,7 +8,7 @@ const MoreInfoModal = ({ isOpen, onClose, onPlay }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[60] flex justify-center items-start overflow-y-auto bg-black/80 backdrop-blur-sm p-0 md:p-4 pt-0 md:pt-8">
+    <div className="fixed inset-0 z-[60] flex justify-center items-start overflow-y-auto bg-black/80 p-0 md:p-4 pt-0 md:pt-8">
       {/* Overlay to close when clicking outside */}
       <div className="absolute inset-0" onClick={onClose}></div>
 
@@ -29,7 +29,7 @@ const MoreInfoModal = ({ isOpen, onClose, onPlay }) => {
 
         {/* Hero Image Section */}
         <div className="relative w-full h-64 md:h-96">
-          <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-transparent to-transparent z-10" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#181818] via-transparent to-transparent z-10" />
           <img 
             src={cover} 
             alt="Atonement Cover" 
@@ -69,7 +69,7 @@ const MoreInfoModal = ({ isOpen, onClose, onPlay }) => {
               Four successful high school friends—Joaquin, Nigel, Chloe, and Bea—are lured to a mysterious reunion at "The Loft." 
               Trapped in a secluded place, they are forced to confront a dark secret from their past: the bullying and death of their classmate, Abby. 
               <br /><br />
-              In this interactive experience, <strong>you</strong> decide who takes the fall.
+              In this twisted reunion, the only thing deadlier than their secrets is the terrifying price of their <strong>atonement</strong>.
             </p>
           </div>
 
