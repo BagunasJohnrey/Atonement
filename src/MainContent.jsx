@@ -17,8 +17,8 @@ const MainContent = ({ onPlay, onMoreInfo, onCast }) => {
         <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent"></div>
       </div>
 
-      {/* Content Container */}
-      <div className="absolute top-1/2 left-4 md:left-10 lg:left-24 transform -translate-y-1/2 w-full max-w-xl z-10 space-y-4 md:space-y-6 pr-4">
+      {/* Content Container - Z-Index increased to 30 to sit above bottom gradient */}
+      <div className="absolute top-1/2 left-4 md:left-10 lg:left-24 transform -translate-y-1/2 w-full max-w-xl z-30 space-y-4 md:space-y-6 pr-4">
         
         {/* Title Image */}
         <img 
@@ -46,7 +46,7 @@ const MainContent = ({ onPlay, onMoreInfo, onCast }) => {
         <div className="flex items-center space-x-3 md:space-x-4 pt-2">
           <button
             onClick={onPlay}
-            className="flex items-center justify-center bg-white text-black px-4 py-2 md:px-6 md:py-3 rounded font-bold text-base md:text-lg hover:bg-gray-200 transition-colors duration-300"
+            className="flex items-center justify-center bg-white text-black px-4 py-2 md:px-6 md:py-3 rounded font-bold text-base md:text-lg hover:bg-gray-200 transition-colors duration-300 cursor-pointer"
           >
             <FaPlay className="mr-2 md:mr-3 text-sm md:text-base" />
             Play
@@ -54,7 +54,7 @@ const MainContent = ({ onPlay, onMoreInfo, onCast }) => {
           
           <button 
             onClick={onMoreInfo}
-            className="flex items-center justify-center bg-gray-600/70 text-white px-4 py-2 md:px-6 md:py-3 rounded font-bold text-base md:text-lg hover:bg-gray-600/50 transition-colors duration-300"
+            className="flex items-center justify-center bg-gray-600/70 text-white px-4 py-2 md:px-6 md:py-3 rounded font-bold text-base md:text-lg hover:bg-gray-600/50 transition-colors duration-300 cursor-pointer"
           >
             <FaInfoCircle className="mr-2 md:mr-3 text-sm md:text-base" />
             More Info
@@ -62,19 +62,19 @@ const MainContent = ({ onPlay, onMoreInfo, onCast }) => {
         </div>
       </div>
 
-      {/* Volume Icon (Hidden on very small screens to save space) */}
-      <div className="hidden sm:block absolute bottom-32 md:bottom-44 right-4 md:right-10 z-10">
+      {/* Volume Icon - Z-Index increased to 30 */}
+      <div className="hidden sm:block absolute bottom-32 md:bottom-44 right-4 md:right-10 z-30">
         <div className="bg-black/50 p-2 rounded-full hover:bg-black/70 transition-colors cursor-pointer border border-white/20">
           <FaVolumeUp className="text-white h-5 w-5 md:h-6 md:w-6" />
         </div>
       </div>
 
-      {/* Bottom Tabs */}
-      <div className="absolute bottom-0 left-0 w-full z-10 bg-linear-to-t from-black to-transparent p-4 md:p-10 lg:p-24 flex items-center space-x-6 md:space-x-10 overflow-x-auto no-scrollbar">
-        <button className="text-white text-sm md:text-lg font-bold border-b-4 border-red-600 pb-2 whitespace-nowrap">OVERVIEW</button>
+      {/* Bottom Tabs - pointer-events-none added to container, auto to buttons */}
+      <div className="absolute bottom-0 left-0 w-full z-10 bg-linear-to-t from-black to-transparent p-4 md:p-10 lg:p-24 flex items-center space-x-6 md:space-x-10 overflow-x-auto no-scrollbar pointer-events-none">
+        <button className="text-white text-sm md:text-lg font-bold border-b-4 border-red-600 pb-2 whitespace-nowrap pointer-events-auto cursor-pointer">OVERVIEW</button>
         <button 
           onClick={onCast}
-          className="text-gray-400 text-sm md:text-lg font-bold hover:text-white transition-colors whitespace-nowrap"
+          className="text-gray-400 text-sm md:text-lg font-bold hover:text-white transition-colors whitespace-nowrap pointer-events-auto cursor-pointer"
         >
           CASTS
         </button>
