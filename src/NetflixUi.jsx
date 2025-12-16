@@ -9,16 +9,16 @@ import { AnimatePresence } from 'framer-motion';
 
 const FILM_DATA = {
   intro: {
-    id: 'eUolLUnN0co',
+    id: 'w92u4od6wxk',
     title: "Atonement",
   },
   endings: {
     A: {
-      id: 'ifyTnA6kJMU',
+      id: 'D8VEhcPeSlc',
       label: "Ending 1",
     },
     B: {
-      id: 'FYoeYOCrtpg',
+      id: '3CvJKTChsl4',
       label: "Ending 2",
     }
   }

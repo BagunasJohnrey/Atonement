@@ -7,13 +7,13 @@ const VideoPlayer = ({ videoId, onEnd, onBack }) => {
     height: '100%',
     width: '100%',
     playerVars: {
-      autoplay: 1,
-      controls: 0,       // Hides player controls
-      disablekb: 1,      // Disables keyboard controls
-      modestbranding: 1, // Minimal YouTube branding
-      rel: 0,            // Don't show related videos at the end
-      fs: 0,             // Hides fullscreen button
-      iv_load_policy: 3, // Hides video annotations
+      autoplay: 1,      
+      controls: 1,      
+      disablekb: 0,      
+      fs: 1,            
+      modestbranding: 1, 
+      rel: 0,            
+      iv_load_policy: 3, 
     },
   };
 
@@ -26,7 +26,8 @@ const VideoPlayer = ({ videoId, onEnd, onBack }) => {
         <FaArrowLeft className="mr-2 h-5 w-5" />
         <span className="text-base font-semibold">Back</span>
       </button>
-      <div className="flex-grow relative pointer-events-none">
+
+      <div className="flex-grow relative"> 
         <YouTube
           videoId={videoId}
           opts={opts}
