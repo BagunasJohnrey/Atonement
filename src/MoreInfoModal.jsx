@@ -59,7 +59,7 @@ const MoreInfoModal = ({ isOpen, onClose, onPlay }) => {
           {/* Left Column: Description */}
           <div className="space-y-4 md:space-y-6">
             <div className="flex items-center space-x-3 md:space-x-4 text-sm font-bold">
-              <span className="text-green-400">98% Match</span>
+              
               <span className="text-gray-400">2025</span>
               <span className="border border-gray-500 px-1 text-xs">TV-MA</span>
               <span className="text-gray-400">Interactive Film</span>
